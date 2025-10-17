@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import CategoryHome, Home
+from .models import CategoryHome, Home, Client, Contact
 
 @admin.register(CategoryHome)
 class CategoryAdmin(admin.ModelAdmin):
@@ -12,3 +12,13 @@ class HomeAdmin(admin.ModelAdmin):
     list_display = ("name","price")
     list_filter = ("name","recomended")
     search_fields = ("name",)
+
+@admin.register(Client)
+class ClientAdmin(admin.ModelAdmin):
+    list_display = ("name","profession")
+    list_filter = ("name","profession")
+    search_fields = ("name",)
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ("phone","email") 
